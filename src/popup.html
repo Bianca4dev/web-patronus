@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Patronus</title>
+    <link href="popup.css" rel="stylesheet">
+    <script src="popup.js"></script>
+</head>
+<body>
+  <header class="header">
+    <!--LOGO ANd Heading-->
+    <img class="logo" src="web-patronusIcon.png">
+    <h1>Web Patronus</h1>
+    <div class="tagline">Your Guardian Against Malicious Links</div>
+  </header>
+<!--Input section to check links manually -->
+  <section class="input-section">
+    <label for="urlInput">🔍 Check Link Safety</label>
+    <div class="input-group">
+      <input type="text" id="urlInput" placeholder="Paste a URL to analyze..." /> 
+      <button id="checkBtn">Analyze</button>
+    </div>
+    <!--Display cred score here -->
+    <div id="result"></div>
+  </section>
+  <!--Todo: Add section of cred score of the current page that the user is on -->
+<!--Cred score of current links on page -->
+  <section class="score-section">
+    <h2>🛡️ Current Page Analysis</h2>
+    <div class="score-container">
+        <!--Count of safe links-->
+      <div class="score safe">
+        <span>Safe Links</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-weight: 600;">12</span>
+          <div class="score-icon">✓</div>
+        </div>
+      </div>
+      <!--Count of suspicious links-->
+      <div class="score warning">
+        <span>Suspicious Links</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-weight: 600;">3</span>
+          <div class="score-icon">!</div>
+        </div>
+      </div>
+      <!--Count of dangerous links-->
+      <div class="score danger">
+        <span>Dangerous Links</span>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-weight: 600;">1</span>
+          <div class="score-icon">×</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="actions">
+    <!--Rescan the page-->
+    <button id="scanBtn" >🔄 Rescan Page</button>
+    <!--Quiz the user so they can level up -->
+    <button id="quizBtn">🧠 Security Quiz</button>
+  </section>
+<!--Footer-->
+  <footer class="footer">
+    <small>v1.0 | © 2025 Web Patronus | Keeping you safe online</small>
+  </footer>
+
+ 
+</body>
+</html>
