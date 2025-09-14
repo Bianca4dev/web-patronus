@@ -13,23 +13,43 @@ Follow the steps below to set up and run the project. (Example)
 // TODO: List software, runtimes, frameworks, and or dependencies
 // along with instructions on how to set each up.
 ```
-- Example: Node.js v18+
-- Example: Python 3.10
-- Example: Docker
+-Google Chrome or Brave
+-Developer Mode enabled
+-Internet Connection
 
 ---
 
 ## ⚙️ Installation
-``` bash
-# Clone the repository
-git clone <your-repo-url>
-cd <repo-name>
+```
+# 1. Clone the repository
+git clone <https://github.com/Bianca4dev/web-patronus>
+cd web-patronus
 
-# Install dependencies
-<insert command here>
+# 2. Open Chrome/Brave browser
+# 3. Navigate to chrome://extensions/ or brave://extensions/
+# 4. Enable "Developer mode" (toggle in top-right corner)
+# 5. Click "Load unpacked" button
+# 6. Select the /src folder from this project
 ```
 
-## ▶️ Running the Project
-``` bash
-<insert run command here> # Or an explanation on what to do
-```
+
+## Testing Features
+
+#link Scanning
+# 1. Visit any website with multiple links
+# 2. Click the Web Patronus extension icon
+# 3. View the scan results dashboard showing:
+#    - Safe links (green)
+#    - Suspicious links (yellow) 
+#    - Dangerous links (red)
+
+#Security Quix
+# 1. Click the Web Patronus extension icon
+# 2. Click "Security Quiz" button
+# 3. Answer questions to earn XP and level up
+# 4. View your progress and achievements
+
+#Security Warning
+# 1. Click on any suspicious/malicious link
+# 2. Web Patronus will display a security warning modal
+# 3. Choose to "Continue" or "Go Back"

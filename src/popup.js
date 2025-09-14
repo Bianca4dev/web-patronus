@@ -570,7 +570,7 @@ function displayUrlAnalysis(linkData) {
           ${linkData.analysis ? `
             <div class="detail-item">
               <span class="detail-label">Security Checks:</span>
-              <span class="detail-value">${linkData.analysis.apiScore > 0 ? 'Issues Found' : 'Passed'}</span>
+              <span class="detail-value">${credScore < 80 ? 'Issues Found' : 'Passed'}</span>
             </div>
           ` : ''}
           
