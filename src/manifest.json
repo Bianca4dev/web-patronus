@@ -4,7 +4,9 @@
   "version": "1.0",
   "description": "Scans links on webpages and scores their safety.",
   "permissions": ["activeTab", "storage", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": [
+    "https://www.virustotal.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },

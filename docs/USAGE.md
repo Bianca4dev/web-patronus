@@ -26,10 +26,9 @@ npm start
 ```
 Check out the Demos: 
 - [Demo Video](../demo/demo.mp4)
-- [Demo Presentation](../demo/demo.pptx)
+- [Presentation](../docs/WebPatronus.pptx)
 
 ## 📌 Notes
 ``` c
-// TODO: Add any special instructions, caveats, or tips
-// for using your project.
+Setup: Please view the setup page in the presentation.Thank you 
 ```
