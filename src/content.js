@@ -989,7 +989,7 @@ setInterval(() => {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+       background: linear-gradient(135deg, #387df312 0%, #0325830d 100%);
     backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
@@ -999,7 +999,7 @@ setInterval(() => {
 }
 
 .risk-popup {
-    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+   background: #f3f3f3;
     padding: 40px 35px;
     border-radius: 20px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
@@ -1038,7 +1038,7 @@ setInterval(() => {
 .security-icon {
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.15);
+       background: blue;
     border-radius: 50%;
     margin: 0 auto 25px;
     display: flex;
@@ -1046,7 +1046,7 @@ setInterval(() => {
     justify-content: center;
     position: relative;
     z-index: 2;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 6px solid rgb(180 196 241 / 62%);
 }
 
 .security-icon svg {
@@ -1054,9 +1054,9 @@ setInterval(() => {
 }
 
 .security-title {
-    color: white;
+       color: #000000;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0 0 15px 0;
     position: relative;
     z-index: 2;
@@ -1065,7 +1065,7 @@ setInterval(() => {
 }
 
 .security-message {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(43 43 43 / 90%);
     font-size: 16px;
     margin: 0 0 8px 0;
     position: relative;
@@ -1074,36 +1074,50 @@ setInterval(() => {
 }
 
 .security-url {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    padding: 15px;
+  background: rgb(247 249 251);
+    border-radius: 8px;
+  padding: 20px 15px;
     margin: 0 0 20px 0;
     position: relative;
     z-index: 2;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(0 0 0 / 15%);
+    border-left: 4px solid #3476ef;
 }
 
 .security-url strong {
-    color: #fbbf24;
-    font-size: 16px;
-    font-weight: 600;
+     color: #696969;
+    font-size: 15px;
+    font-weight: 500;
     word-break: break-all;
     font-family: 'Monaco', 'Menlo', monospace;
 }
-
+.risk-warning{
+    background-color: #eeffa8;
+    color: #abab08;
+    border: 2px solid #d3d977;
+}
+.risk-safe{
+background-color: #dffcea;
+    color: green;
+    border: 2px solid #b5f5cb;
+}
+.risk-danger{
+    background-color: #f5caca;
+    color: red;
+    border: 2px solid #ed8c8c;
+}
 .risk-level {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 400;
     margin: 20px 0;
     padding: 15px;
     border-radius: 12px;
     position: relative;
     z-index: 2;
-    color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -1115,38 +1129,38 @@ setInterval(() => {
     animation: pulse 2s infinite;
 }
 
-.risk-low {
+.risk-safe {
     background: rgba(16, 185, 129, 0.2);
     border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-.risk-low::before {
+.risk-safe::before {
     background: #10b981;
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
 
-.risk-medium {
+.risk-warning {
     background: rgba(251, 191, 36, 0.2);
     border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
-.risk-medium::before {
+.risk-warning::before {
     background: #fbbf24;
     box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
 }
 
-.risk-high {
+.risk-danger {
     background: rgba(239, 68, 68, 0.2);
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.risk-high::before {
+.risk-danger::before {
     background: #ef4444;
     box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
 }
 
 .risk-description {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(87 87 87 / 80%);
     font-size: 14px;
     margin: 0 0 30px 0;
     position: relative;
@@ -1176,7 +1190,7 @@ setInterval(() => {
 }
 
 .continue-btn {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+   background: linear-gradient(135deg, #387df3 0%, #032583 100%);
     color: white !Important;
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1190,10 +1204,12 @@ setInterval(() => {
 }
 
 .cancel-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+     background: rgba(255, 255, 255, 0.1);
+    color: #7f7f7f;
+    border: 1px solid rgb(109 109 109 / 30%);
     backdrop-filter: blur(10px);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .cancel-btn:hover {
@@ -1217,7 +1233,7 @@ setInterval(() => {
     </svg>
 </div>
 
-<h2 class="security-title">🔒 Security Warning</h2>
+<h2 class="security-title">Link Security check</h2>
 
 <p class="security-message">You are about to visit:</p>
 
@@ -1232,8 +1248,8 @@ setInterval(() => {
 <p class="risk-description">${riskMessages[riskItem.riskLevel.toLowerCase()]}</p>
 
 <div class="popup-buttons">
-    <a class="popup-btn continue-btn" href="${originalLink}">Continue</a>
-    <button id="closeBtn" class="popup-btn cancel-btn">Cancel</button>
+    <a class="popup-btn continue-btn" href="${originalLink}">Continue to Site</a>
+    <button id="closeBtn" class="popup-btn cancel-btn">Go Back</button>
 </div>
 `;
 

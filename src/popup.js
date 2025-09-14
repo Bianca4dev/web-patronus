@@ -767,6 +767,7 @@ async function scanCurrentPage() {
     //if all else fails, show what happened
     let errorMessage = 'Unable to scan this page.';
     
+    updateScoreDisplayZero();
     if (error.message.includes('Cannot access current tab')) {
       errorMessage = 'Cannot access the current tab. Try refreshing the page.';
     } else if (error.message.includes('Could not establish connection')) {
@@ -781,7 +782,59 @@ async function scanCurrentPage() {
     return null;
   }
 }
+function updateScoreDisplayZero() {
+  
+  //get counts 
+  const safeScore = document.querySelector('.score.safe .count');
+  const warningScore = document.querySelector('.score.warning .count ');
+  const dangerScore = document.querySelector('.score.danger .count ');
+  
+  // update said counts
+  if (safeScore) {
+    //check valid score or default 0 
+    safeScore.textContent = 0;
+    console.log('Updated safe score to:',  0);
+  } else {
+    console.warn('Could not find safe score element');
+  }
+  
+  if (warningScore) {
+      //check valid score or default 0 
+    warningScore.textContent = scanResults.warning || 0;
+    console.log('Updated warning score to:', scanResults.warning || 0);
+  } else {
+    console.warn('Could not find warning score element');
+  }
+  
+  if (dangerScore) {
+      //check valid score or default 0 
+    dangerScore.textContent = scanResults.danger || 0;
+    console.log('Updated danger score to:', scanResults.danger || 0);
+  } else {
+    console.warn('Could not find danger score element');
+  }
+  
+  //add little jiggle to show it updated
+  document.querySelectorAll('.score').forEach(scoreElement => {
+    scoreElement.style.transform = 'scale(1.05)';
+    scoreElement.style.transition = 'transform 0.2s ease';
+    
+    setTimeout(() => {
+      scoreElement.style.transform = 'scale(1)';
+    }, 200);
+  });
 
+  //show total 
+  const total = (scanResults.safe || 0) + (scanResults.warning || 0) + (scanResults.danger || 0);
+  console.log(`Scan results - Safe: ${scanResults.safe}, Warning: ${scanResults.warning}, Danger: ${scanResults.danger}, Total: ${total}`);
+  
+  //update total amount 
+  //Todo: not currently shown on pupup
+  const totalDisplay = document.querySelector('.total-links');
+  if (totalDisplay) {
+    totalDisplay.textContent = `Total links found: ${total}`;
+  }
+}
 //function to update counts in popup
 function updateScoreDisplay(scanResults) {
   console.log('Updating display with results:', scanResults);
@@ -845,12 +898,9 @@ function showError(message) {
   if (result) {
     result.className = 'result-warning show';
     result.innerHTML = `<span style="color: #d32f2f;">Error: ${message}</span>`;
-    
+    result.style.display="block";
     // Clear error after 8 seconds
-    setTimeout(() => {
-      result.className = '';
-      result.innerHTML = '';
-    }, 8000);
+  //removed timeout as an error should show 
   } else {
     console.warn('Result element not found for error display');
   }
@@ -863,11 +913,12 @@ function showSuccess(message) {
   if (result) {
     result.className = 'result-success show';
     result.innerHTML = `<span style="color: #2e7d32;">${message}</span>`;
-    
+    result.style.display="block";
     // Clear success message after 4 seconds
     setTimeout(() => {
-      result.className = '';
+      result.className = 'fade-out';
       result.innerHTML = '';
+       result.style.display='none';
     }, 4000);
   }
 }
@@ -1019,6 +1070,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.log('Scan successful from button click');
         } else {
           showError('Scan completed but no results returned.');
+       
         }
       } catch (error) {
         console.error('Scan button error:', error);
